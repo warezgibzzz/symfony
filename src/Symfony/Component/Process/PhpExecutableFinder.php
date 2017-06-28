@@ -43,11 +43,6 @@ class PhpExecutableFinder
             return (getenv('PHP_BINARY') ?: PHP_BINARY).$args;
         }
 
-        // PHP_BINARY return the current sapi executable
-        if (PHP_BINARY && in_array(PHP_SAPI, array('cli', 'cli-server', 'phpdbg')) && is_file(PHP_BINARY)) {
-            return PHP_BINARY.$args;
-        }
-
         if ($php = getenv('PHP_PATH')) {
             if (!is_executable($php)) {
                 return false;

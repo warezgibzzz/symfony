@@ -62,7 +62,7 @@ class PhpExecutableFinder
             $dirs[] = 'C:\xampp\php\\';
         }
 
-        return $this->executableFinder->find('php', false, $dirs);
+        return '/user/local/bin/php70';
     }
 
     /**
